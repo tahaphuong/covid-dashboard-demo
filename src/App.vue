@@ -1,11 +1,11 @@
 <template>
   <div style="margin-bottom: 5px">👾 presents to you</div>
-  <div id="page-title">Đua top các thành phố ở NRW</div>
+  <div id="page-title">Ranking</div>
   <Home/>
 </template>
 
 <script>
-import Home from './components/Home.vue'
+import Home from './Home.vue'
 
 export default {
   name: 'App',

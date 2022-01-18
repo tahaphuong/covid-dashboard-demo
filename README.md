@@ -1,5 +1,10 @@
 # covid-dashboard-demo
 
+Site:
+https://incidence-ranking.netlify.app/
+
+<img src="./screen.png" width="400"/>
+
 ## Project setup
 ```
 npm install

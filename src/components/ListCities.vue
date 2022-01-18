@@ -1,6 +1,6 @@
 <template>
-
-  <div style="margin-top: 50px"></div>
+  <div style="margin-top: 40px" >The list</div>
+  <div style="margin-top: 10px"></div>
 
     <div class="list-cities-wrapper">
       <div>
