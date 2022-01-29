@@ -9,10 +9,23 @@
         v-model="inputCity"
       />
     </div>
+    <div class="input-info">
+      Search a city here or double click to delete an entity ✌️
+    </div>
 
-    <div v-if="resultList.length" style="display: flex; justify-content: center">
+    <div
+      v-if="resultList.length"
+      style="display: flex; justify-content: center"
+    >
       <div id="dropdown">
-        <div @click="chooseCityInput(item.ags, item.name)" class="option" v-for="(item, i) in resultList" :key="i">{{ item.name }}</div>
+        <div
+          @click="chooseCityFromInput(item.ags, item.name)"
+          class="option"
+          v-for="(item, i) in resultList"
+          :key="i"
+        >
+          {{ item.name }}
+        </div>
       </div>
     </div>
   </div>
@@ -20,7 +33,7 @@
 
 <script>
 export default {
-  name: "SearchCityButton",
+  name: "SearchCitySection",
   props: {
     handleInputCity: {
       type: Function,
@@ -28,11 +41,15 @@ export default {
     },
     resultList: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     chooseCity: {
       type: Function,
       default: () => {},
+    },
+    inputInfo: {
+      type: Object,
+      default: null,
     },
   },
   data() {
@@ -41,15 +58,15 @@ export default {
     };
   },
   methods: {
-    chooseCityInput(ags, name) {
-      this.inputCity = name
-      this.chooseCity(ags)
-      this.handleInputCity(name, false)
-    }
+    chooseCityFromInput(ags, name) {
+      this.inputCity = "";
+      this.chooseCity(ags);
+      this.handleInputCity(name, false);
+    },
   },
   watch: {
     inputCity(newValue) {
-      this.handleInputCity(newValue, this.inputCity.length != 0)
+      this.handleInputCity(newValue, this.inputCity.length != 0);
     },
   },
 };
@@ -95,13 +112,28 @@ export default {
 }
 
 #dropdown .option {
-  padding: 12px 0px
+  padding: 12px 0px;
 }
 
 .option:hover {
   cursor: pointer;
   background-color: rgb(202, 202, 202);
 }
+
+.input-info {
+  font-size: 12px;
+  margin-top: 4px;
+  color: rgb(175, 175, 175);
+}
+
+.input-success {
+  color: rgb(41, 158, 41);
+}
+
+.input-error {
+  color: rgb(158, 51, 51);
+}
+
 /* #add-city-btn {
   width: 100px;
   cursor: pointer;

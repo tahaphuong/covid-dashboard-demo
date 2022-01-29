@@ -1,6 +1,6 @@
 <template>
   <div style="margin-bottom: 5px">👾 presents to you</div>
-  <div id="page-title">Ranking</div>
+  <div id="page-title">COVID-19 Ranking</div>
   <Home/>
 </template>
 
